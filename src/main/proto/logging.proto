@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package logging.proto;
+
+message LoggingRequest {
+    string status = 1;
+    string message = 2;
+}
+
+message LoggingResponse {
+    string status = 1;
+}
+
+service LoggingService {
+    rpc Write (LoggingRequest) returns (LoggingResponse);
+}
